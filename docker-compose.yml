@@ -1,16 +1,17 @@
-version: '3'
-
+version: '3.8'
 services:
   app:
     build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - "8000:80"
-    depends_on:
-      - db
+      context: C:\Users\anish\tanX_AG
+      dockerfile: C:\Users\anish\tanX_AG\Dockerfile
+    volumes:
+      - C:\Users\anish\tanX_AG:/app
+    command: python app.py
 
   test:
     build:
-      context: .
-      dockerfile: Dockerfile.test
+      context: C:\Users\anish\tanX_AG
+      dockerfile: C:\Users\anish\tanX_AG\Dockerfile.test
+    volumes:
+      - C:\Users\anish\tanX_AG:/app
+    command: pytest tests
